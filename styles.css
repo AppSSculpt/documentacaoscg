@@ -15,7 +15,6 @@ body {
     height: 100vh;
     margin: 0;
     flex-direction: column; /* Ajuste para melhor responsividade */
-    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
     padding-bottom: 60px; /* Adicionando padding inferior para garantir que o footer não sobreponha */
 }
 
@@ -24,8 +23,8 @@ body {
     text-align: center;
     width: 100%;
     padding: 20px;
+    margin-top: 100px;
 }
-
 /* Estilo do título */
 h1 {
     color: #333;
@@ -88,7 +87,16 @@ h1 {
     right: 10px;
     font-size: 30px;
     cursor: pointer;
+    display: none; /* Inicialmente oculto */
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .close-btn {
+        display: block; /* Exibir em telas menores */
+    }
+}
+
 
 /* Estilo do botão de ação dentro do popup */
 .popup-btn {
@@ -178,13 +186,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
-/* Ajustes para o corpo (evitar que o conteúdo seja coberto) */
-body {
-    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
-    padding-bottom: 60px; /* Adicionando padding inferior para garantir que o footer não sobreponha */
-}
-
 /* Estilo para o footer */
 footer {
     position: fixed; /* Removido fixed para evitar sobreposição */
@@ -209,7 +210,8 @@ footer {
     }
 
     .container {
-        padding-bottom: 100px; /* Adicionando padding inferior à container */
+        padding-bottom: 100px;
+        margin-top: 1000px; /* Adicionando padding inferior à container */
     }
 }
 
@@ -333,4 +335,87 @@ footer .footer-content .social-icons a img {
 
 footer .footer-content .social-icons a:hover {
     transform: scale(1.1);
+}
+
+   /* Estilos para os botões no popup */
+   .popup .popup-content button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup .popup-content button:hover {
+    background-color: #45a049;
+}
+
+.popup .popup-content #fechar-popup {
+    margin-top: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .popup-content #fechar-popup:hover {
+    background-color: darkred;
+}
+
+/* Ícone do menu para telas menores */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para a navegação lateral em telas menores */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0056b3;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a,
+.nav-links .close-btn {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.close-btn {
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
 }
