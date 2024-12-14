@@ -15,6 +15,8 @@ body {
     height: 100vh;
     margin: 0;
     flex-direction: column; /* Ajuste para melhor responsividade */
+    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+    padding-bottom: 60px; /* Adicionando padding inferior para garantir que o footer não sobreponha */
 }
 
 /* Container principal */
@@ -177,14 +179,15 @@ nav a:hover {
 }
 
 /* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+/* Ajustes para o corpo (evitar que o conteúdo seja coberto) */
 body {
     padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+    padding-bottom: 60px; /* Adicionando padding inferior para garantir que o footer não sobreponha */
 }
 
-/*footer*/
-/* Estilo geral para o footer */
+/* Estilo para o footer */
 footer {
-    position: fixed;
+    position: fixed; /* Removido fixed para evitar sobreposição */
     bottom: 0;
     width: 100%;
     background-color: #333;
@@ -192,6 +195,30 @@ footer {
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para dispositivos móveis menores */
+@media (max-width: 768px) {
+    footer {
+        position: relative; /* Remover a posição fixa em telas menores */
+        padding: 10px 0;
+    }
+
+    body {
+        padding-bottom: 100px; /* Garantir que o conteúdo não sobreponha o footer */
+    }
+
+    .container {
+        padding-bottom: 100px; /* Adicionando padding inferior à container */
+    }
+}
+
+/* Estilos adicionais para ajustar o layout em telas menores */
+@media (max-width: 480px) {
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Container para o conteúdo do footer */

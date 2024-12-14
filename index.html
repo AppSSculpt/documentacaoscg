@@ -7,146 +7,143 @@
     <link rel="stylesheet" href="styles.css">
         <style>
            /* Estilos para os botões no popup */
-.popup .popup-content button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+        .popup .popup-content button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.popup .popup-content button:hover {
-    background-color: #45a049;
-}
+        .popup .popup-content button:hover {
+            background-color: #45a049;
+        }
 
-.popup .popup-content #fechar-popup {
-    margin-top: 15px;
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .popup .popup-content #fechar-popup {
+            margin-top: 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.popup .popup-content #fechar-popup:hover {
-    background-color: darkred;
-}
+        .popup .popup-content #fechar-popup:hover {
+            background-color: darkred;
+        }
 
-/* Estilos para a navegação fixa no cabeçalho */
-nav {
-    background-color: #0056b3;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+        /* Estilos para a navegação fixa no cabeçalho */
+        nav {
+            background-color: #0056b3;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1rem;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
 
-nav a:hover {
-    text-decoration: underline;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
-body {
-    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
-}
+        /* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+        body {
+            padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+        }
 
-/* Estilos para a navegação fixa no cabeçalho */
-nav {
-    background-color: #0056b3;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+        /* Estilos para a navegação fixa no cabeçalho */
+        nav {
+            background-color: #0056b3;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1rem;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+        }
 
-nav a:hover {
-    text-decoration: underline;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-/* Ícone do menu para telas menores */
-.menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-}
+        /* Ícone do menu para telas menores */
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
 
-.nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Estilos para a navegação lateral em telas menores */
-.nav-links.show {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #0056b3;
-    padding-top: 60px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-}
+        /* Estilos para a navegação lateral em telas menores */
+        .nav-links.show {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #0056b3;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
 
-.nav-links a,
-.nav-links .close-btn {
-    font-size: 1.5rem;
-    margin: 15px 0;
-}
+        .nav-links a,
+        .nav-links .close-btn {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
 
-.close-btn {
-    font-size: 2rem;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: right;
-}
+        .close-btn {
+            font-size: 2rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: right;
+        }
 
-/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
-body {
-    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
-}
+        /* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+        body {
+            padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+        }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-icon {
-        display: block;
-    }
-}
-
-
-
-        </style>
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+</style>
 </head>
 <body>
 
