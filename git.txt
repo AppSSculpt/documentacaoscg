@@ -1,0 +1,6 @@
+A cada vez que você fizer edições no VS Code, você seguirá esse fluxo:
+
+Editar os arquivos.
+Adicionar as alterações: git add . ou git add nome-do-arquivo.
+Commitar as alterações: git commit -m "descrição do que foi feito".
+Push para o GitHub: git push.   
