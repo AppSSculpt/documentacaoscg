@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação dos Sistemas de Gestão de Militares</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 100px; /* Adiciona espaço para o cabeçalho e a navegação */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header, nav {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+nav {
+    background-color: #007BFF;
+    top: 50px; /* Ajuste este valor conforme necessário */
+}
+
+header h1 {
+    color: #ffffff;
+    margin: 0;
+    padding: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 100px 1rem 1rem 1rem; /* Adiciona espaço na parte superior para o cabeçalho e a navegação */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    color: #007BFF;
+}
+
+.section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+ul {
+    list-style: disc inside;
+    margin: 1rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #007BFF;
+    color: white;
+    margin-top: 1rem;
+}
+
+/* Estilo para os botões das categorias */
+.categories button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories button:hover {
+    background-color: #00408d;
+    transform: translateY(-2px);
+}
+
+/* Estilo para o conteúdo dos tutoriais */
+.tutorial-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Inicialmente escondido */
+}
+
+/* Botão fixo de fechar */
+.close-btn {
+    position: fixed;
+    top: 850px;
+    right: 900px;
+    background-color: #00408d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none; /* Inicialmente oculto */
+}
+
+.close-btn:hover {
+    background-color: #114d96;
+}
+
+   </style>
+</head>
+<body>
+    <header id="header">
+        <h1> Documentação dos Sistemas de Controle e Gerenciamento do CLA</h1>
+    </header>
+
+   <!-- Barra de navegação -->
+<nav id="navbar">
+    <a href="index.html">Voltar ao Início</a>
+    <a href="#tutorials">Tutoriais</a> <!-- Link para a seção de tutoriais -->
+</nav>
+
+    <div class="container">
+        <div class="section">
+            <h2>Visão Geral</h2>
+            <p>Este conjunto de sistemas foi desenvolvido para gerenciar as divisões do CLA. Cada uma das 7 divisões possui seu próprio aplicativo, criado pela appsculpt, permitindo uma administração independente e personalizada.</p>
+        </div>
+
+        <div class="section">
+            <h2>Principais Funcionalidades</h2>
+            <ul>
+                <li>Gerenciamento de dados pessoais dos militares.</li>
+                <li>Controle de faltas com dashboards em tempo real.</li>
+                <li>Registro de militares presentes, ausentes e com justificativas.</li>
+                <li>Geração de relatórios diários para retirada de faltas.</li>
+                <li>Monitoramento de entrada e saída de serviços.</li>
+                <li>Análise detalhada para gestão eficiente das divisões.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Divisões</h2>
+            <p>Cada um dos 7 aplicativos é responsável por gerenciar uma das divisões:</p>
+            <ol>
+                <li>DAI</li>
+                <li>DAM</li>
+                <li>DIR</li>
+                <li>DOP</li>
+                <li>GSAU-AK</li>
+                <li>GSD-AK</li>
+                <li>VDR</li>
+            </ol>
+        </div>
+
+        <!-- Novos tutoriais -->
+        <div id="tutorials" class="section">
+            <h2>Tutoriais</h2>
+            <div class="categories">
+                <button onclick="toggleTutorial('category1')">Como acessar</button>
+                <button onclick="toggleTutorial('category2')">Categoria 2</button>
+                <button onclick="toggleTutorial('category3')">Categoria 3</button>
+            </div>
+            
+            <!-- Container dos tutoriais -->
+            <div id="category1" class="tutorial-content">
+                <h3>Como acessar</h3>
+                <p>Para acessar o aplicativo, siga os passos abaixo:</p>
+                <ol>
+                    <li><strong>Acesse a página inicial:</strong>
+                        <p>Acesse a página de aplicativos <a href="index.html" target="_blank">pagina inicial</a>.</p>
+                        <img src="tutorial_img/Pagina inicial.png" alt="Página inicial do site" style="max-width:80%;height:auto; width: 500px;">
+                    </li>
+                    <li><strong>Selecione o aplicativo:</strong>
+                        <p>Na página inicial, você verá links para baixar o aplicativo ou acessá-lo diretamente pelo navegador. O sistema possui 7 aplicativos, e você deve acessar aquele que corresponde à sua divisão. Clique no aplicativo desejado para começar.</p>
+                        <img src="tutorial_img/acoes.png" alt="Menu de aplicativos" style="max-width:80%;height:auto; width: 500px; border-radius: 1px;">
+                    </li>
+                    <li><strong>Login com a conta da Google do setor:</strong>
+                        <p>Ao acessar o aplicativo, você será solicitado a fazer login. Use a conta de e-mail do setor à qual você pertence. Cada divisão tem um e-mail específico do Google. Certifique-se de usar o e-mail correto da sua seção.</p>
+                        <img src="tutorial_img/google-login.png" alt="Tela de login" style="max-width:100%;height:auto;width: 500px;">
+                    </li>
+                    <li><strong>Validação de Cadastro:</strong>
+                        <p>Após o login, você será redirecionado para uma aba chamada "Validação de cadastro". Nessa etapa, você deve validar suas credenciais pessoais (CPF e e-mail pessoal), as quais foram fornecidas ao administrador.</p>
+                        <img src="/tutorial_img/validacao_codigo.png" alt="Tela de validação" style="max-width:60%;height:auto;width: 300px;">
+                    </li>
+                    <li><strong>Confirmação da Validação:</strong>
+                        <p>Após inserir as informações corretamente, o sistema validará seus dados. Em seguida, você receberá um <strong>token pessoal</strong>. Esse código é necessário para acessar completamente o aplicativo.</p>
+                        <p>Copie o código gerado e, em seguida, vá até as <strong>Configurações</strong> do aplicativo. No campo "Meu Código", cole o token que você copiou para finalizar a configuração do seu acesso.</p>
+                        <img src="tutorial_img/codigo_tutorial.png" alt="Tela de confirmação e token" style="max-width:100%;height:auto; width: 300px;">
+                    </li>
+                </ol>
+                <p>Após seguir esses passos, você estará dentro do aplicativo e pronto para usar as funcionalidades de sua divisão!</p>
+            </div>
+
+            <div id="category2" class="tutorial-content">
+                <h3>Tutorial da Categoria 2</h3>
+                <p>Conteúdo do tutorial para a Categoria 2...</p>
+            </div>
+            <div id="category3" class="tutorial-content">
+                <h3>Tutorial da Categoria 3</h3>
+                <p>Conteúdo do tutorial para a Categoria 3...</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Benefícios para a Empresa</h2>
+            <ul>
+                <li>Automatização de processos administrativos.</li>
+                <li>Redução de erros no controle de presença e faltas.</li>
+                <li>Agilidade na geração de relatórios e análise de dados.</li>
+                <li>Transparência na gestão de cada divisão.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Próximos Passos</h2>
+            <p>Os sistemas podem ser expandidos para incluir funcionalidades adicionais, como integração com outras ferramentas corporativas e relatórios avançados com gráficos interativos.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Desenvolvido por Appsculpt</p>
+    </footer>
+    <!-- Botão fixo de fechar -->
+    <button id="closeBtn" class="close-btn" onclick="closeTutorial()">Fechar Tutorial</button>
+
+    <script>
+        function toggleTutorial(categoryId) {
+            const tutorial = document.getElementById(categoryId);
+            const closeBtn = document.getElementById('closeBtn');
+            
+            // Alterna a visibilidade do tutorial
+            if (tutorial.style.display === 'none' || tutorial.style.display === '') {
+                tutorial.style.display = 'block';
+                closeBtn.style.display = 'block';  // Mostra o botão de fechar
+            } else {
+                tutorial.style.display = 'none';
+                closeBtn.style.display = 'none';   // Esconde o botão de fechar
+            }
+        }
+
+        // Função para fechar o tutorial
+        function closeTutorial() {
+            const tutorials = document.querySelectorAll('.tutorial-content');
+            tutorials.forEach(tutorial => tutorial.style.display = 'none');
+            document.getElementById('closeBtn').style.display = 'none';  // Esconde o botão de fechar
+        }
+    
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            const header = document.getElementById("header");
+            const navbar = document.getElementById("navbar");
+
+            if (prevScrollpos > currentScrollPos) {
+                header.style.top = "0";
+                navbar.style.top = "70px"; // Ajuste este valor conforme necessário
+            } else {
+                header.style.top = "-60px"; // Altura do header
+                navbar.style.top = "0";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>

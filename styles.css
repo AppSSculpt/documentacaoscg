@@ -1,0 +1,309 @@
+/* Reseta as margens e paddings para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Ajuste para melhor responsividade */
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilo do título */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o deck de cartões */
+.deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Container dos cartões de aplicativo */
+.deck-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo para diferentes tamanhos de tela */
+    gap: 15px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilo de cada cartão */
+.app-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efeito de hover no cartão */
+.app-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ícone do aplicativo dentro do cartão */
+.app-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Botão de fechar dentro do popup */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilo do botão de ação dentro do popup */
+.popup-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover no botão de ação */
+.popup-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Estilo do popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* Conteúdo do popup */
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Estilo do botão de fechar no popup */
+#fechar-popup {
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover no botão de fechar */
+#fechar-popup:hover {
+    background-color: darkred;
+    transform: translateY(-2px);
+}
+
+/* Estilos para a navegação fixa no cabeçalho */
+nav {
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+body {
+    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+}
+
+/*footer*/
+/* Estilo geral para o footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Container para o conteúdo do footer */
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para o texto de crédito */
+footer .footer-content .credit {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Estilo para a logo */
+footer .footer-content .logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Estilo para as redes sociais */
+footer .footer-content .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+footer .footer-content .social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer .footer-content .social-icons a:hover {
+    color: #4CAF50;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .deck-container {
+        padding: 20px;
+        grid-template-columns: 1fr; /* Ajuste para colunas únicas em telas pequenas */
+    }
+
+    .popup-content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .app-card {
+        padding: 15px;
+    }
+
+    .popup-btn {
+        font-size: 14px;
+    }
+
+    #fechar-popup {
+        font-size: 14px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-content .credit {
+        margin: 10px 0;
+    }
+
+    footer .footer-content .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* Responsividade para dispositivos móveis menores */
+@media (max-width: 480px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav {
+        text-align: left;
+        padding: 1rem;
+    }
+}
+
+/* Estilo para as redes sociais */
+footer .footer-content .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+footer .footer-content .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+footer .footer-content .social-icons a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+footer .footer-content .social-icons a:hover {
+    transform: scale(1.1);
+}

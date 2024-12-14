@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemas cla</title>
+    <link rel="stylesheet" href="styles.css">
+        <style>
+           /* Estilos para os botões no popup */
+.popup .popup-content button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup .popup-content button:hover {
+    background-color: #45a049;
+}
+
+.popup .popup-content #fechar-popup {
+    margin-top: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .popup-content #fechar-popup:hover {
+    background-color: darkred;
+}
+
+/* Estilos para a navegação fixa no cabeçalho */
+nav {
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+body {
+    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+}
+
+/* Estilos para a navegação fixa no cabeçalho */
+nav {
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Ícone do menu para telas menores */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para a navegação lateral em telas menores */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0056b3;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a,
+.nav-links .close-btn {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.close-btn {
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+}
+
+/* Ajuste de margem superior para o conteúdo principal para não ficar sob o nav fixo */
+body {
+    padding-top: 60px; /* Ajuste este valor conforme a altura do seu nav */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+
+        </style>
+</head>
+<body>
+
+        <nav>
+            <span class="menu-icon" onclick="toggleNav()">☰</span>
+            <div id="nav-links" class="nav-links">
+                <a href="documentacao.html">Documentação</a>
+                <button class="close-btn" onclick="toggleNav()">✕</button>
+            </div>
+        </nav>
+    <div class="container">
+        <h1>Sistemas de Gestão do Efetivo do CLA</h1>
+        <div class="deck">
+            <div class="deck-container">
+                <div class="app-card" id="app1" onclick="abrirPopup('app1')">
+                    <img src="https://www.appsheet.com:443/fsimage.png?appid=918fb655-1e64-4217-a7ac-2c47d615e7b7&datasource=google&filename=DocId%3D1Ejrt_QraI6YecHRCRR5SvnUJX4Czx68V&signature=5e8495c0695466311889a9dfb1a2b28161895c07fd4c1f00e469d58b9403d35f&tableprovider=google&userid=146631176" alt="App 1" class="app-icon">
+                    <h3>SCG.GSD</h3>
+                </div>
+                <div class="app-card" id="app2" onclick="abrirPopup('app2')">
+                    <img src="https://www.appsheet.com/Content/img/appicons/human-resources.png" alt="App 2" class="app-icon">
+                    <h3>SCG.DAI</h3>
+                </div>
+                <div class="app-card" id="app3" onclick="abrirPopup('app3')">
+                    <img src="https://www.appsheet.com/Content/img/appicons/human-resources.png" alt="App 3" class="app-icon">
+                    <h3>SCG.DOP</h3>
+                </div>
+                <div class="app-card" id="app4" onclick="abrirPopup('app4')">
+                    <img src="https://www.appsheet.com:443/fsimage.png?appid=c3221d02-ef5d-4319-8025-b7c72f0e47ef&datasource=google&filename=DocId%3D17IboZlE3aCaWSXQ-vkYz5fMHHdjnyK-0&signature=6664b3b6497cb079ec0e74da1da1db63d2ef831998241ebdc32ff270f628601e&tableprovider=google&userid=17013073" alt="App 4" class="app-icon">
+                    <h3>SCG.GSAU</h3>
+                </div>
+                <div class="app-card" id="app5" onclick="abrirPopup('app5')">
+                    <img src="https://www.appsheet.com/Content/img/appicons/other.png" alt="App 5" class="app-icon">
+                    <h3>SCG.DAM</h3>
+                </div>
+                <div class="app-card" id="app6" onclick="abrirPopup('app6')">
+                    <img src="https://www.appsheet.com/Content/img/appicons/human-resources.png" alt="App 6" class="app-icon">
+                    <h3>SCG.DIR</h3>
+                </div>
+                <div class="app-card" id="app7" onclick="abrirPopup('app7')">
+                    <img src="https://www.appsheet.com/Content/img/appicons/human-resources.png" alt="App 7" class="app-icon">
+                    <h3>SCG.VDR</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <img src="/src/logo_appsculpt.png" alt="Logo da AppSculpt" class="logo">
+            <div class="credit">
+                Desenvolvido pela Appsculpt.com.br
+            </div>
+            <div class="social-icons">
+                <!-- Links para as redes sociais com ícones -->
+                <a href="https://instagram.com" target="_blank" class="social-icon">
+                    <img src="src/174855.png" alt="Instagram">
+                </a>
+                <a href="https://github.com" target="_blank" class="social-icon">
+                    <img src="src/779088 - Copia.png" alt="GitHub">
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+    
+
+   <!-- Popup Container -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="popup-title"></span>
+        
+        <!-- Ações -->
+        <button id="copiar-link">Copiar Link</button>
+        <button id="compartilhar-whatsapp">Compartilhar no WhatsApp</button>
+        <button id="baixar-apk">Baixar aplicativo android</button>
+
+        <!-- Botão de Fechar -->
+        <button id="fechar-popup" onclick="fecharPopup()">Fechar</button>
+    </div>
+</div>
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
