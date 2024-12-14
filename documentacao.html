@@ -137,6 +137,82 @@ footer {
     background-color: #114d96;
 }
 
+/* Ajustes gerais para melhorar o layout em telas pequenas */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Ajuste o topo para que a navegação não sobreponha o conteúdo */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Ajuste o tamanho da fonte no cabeçalho para telas menores */
+    }
+
+    nav {
+        padding: 0.5rem 0; /* Menor altura para a barra de navegação em dispositivos móveis */
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Menor tamanho de fonte para os links da navegação */
+        margin: 0 0.5rem; /* Menor margem entre os links */
+    }
+
+    .container {
+        max-width: 100%; /* Aumenta a largura do contêiner para aproveitar toda a tela */
+        padding: 60px 1rem 1rem 1rem; /* Ajusta o preenchimento para não sobrepor o topo */
+    }
+
+    .section {
+        padding: 1rem; /* Ajuste o padding das seções para melhor aproveitamento do espaço */
+    }
+
+    /* Ajustar as imagens para caberem melhor nas telas menores */
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px; /* Adiciona borda arredondada nas imagens */
+    }
+
+    .tutorial-content {
+        padding: 1rem; /* Ajuste o padding para tornar o conteúdo mais legível */
+        margin-top: 1rem; /* Diminui a margem superior */
+    }
+
+    .close-btn {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        font-size: 14px;
+        padding: 8px 15px; /* Botão de fechar menor e mais acessível */
+    }
+}
+
+/* Ajustes para telas muito pequenas, como smartphones */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para dispositivos muito pequenos */
+        margin: 0 0.3rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Tamanho menor do cabeçalho em telas muito pequenas */
+    }
+
+    .categories button {
+        padding: 8px 15px; /* Ajuste o tamanho dos botões */
+        font-size: 14px; /* Fontes menores para botões */
+    }
+
+    .section h2 {
+        font-size: 1.2rem; /* Tamanho menor dos títulos das seções */
+    }
+
+    /* Ajustes para listas */
+    ul, ol {
+        margin: 1rem 0;
+        padding-left: 1.5rem; /* Adiciona um pouco mais de espaço à esquerda */
+    }
+}
+
    </style>
 </head>
 <body>
