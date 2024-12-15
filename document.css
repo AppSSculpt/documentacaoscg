@@ -1,0 +1,254 @@
+
+
+/* Estilo documentação */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6; /* Fundo suave */
+    color: #2d3748; /* Texto escuro para melhor contraste */
+    padding-top: 120px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.container h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #0056b3;
+    text-align: center;
+}
+
+/* Estilos para a navegação fixa no cabeçalho */
+nav {
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #2d3748;
+    transform: translateY(-3px);
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 1.5rem 2rem 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+    font-weight: 600;
+}
+
+.section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+ul {
+    list-style: disc inside;
+    margin: 1rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0056b3;
+    color: #f3f4f6;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Estilo para os botões das categorias */
+.categories button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Estilo para o conteúdo dos tutoriais */
+.tutorial-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Botão fixo de fechar tutoriais */
+.close-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #00408d;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+    .container {
+        max-width: 100%;
+        padding: 60px 1rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .close-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        display: block;
+        font-size: 0.8rem;
+        margin: 10px 0;
+    }
+    nav {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .container h1 {
+        font-size: 1.2rem;
+    }
+
+    .categories button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    ul, ol {
+        margin: 1rem 0;
+        padding-left: 1.2rem;
+    }
+}
+
+/* Centralização de imagens */
+.img-center {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+/* Ícone do menu para telas menores */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para a navegação lateral em telas menores */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0056b3;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a,
+.nav-links .close-btn-menu {
+    font-size: 1.5rem;
+    margin: 15px 15;
+}
+
+
+.close-btn-menu {
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    display: none;
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .close-btn-menu {
+        display: block;
+    }
+    .container h1 {
+        font-size: 1.5rem;
+
+    }
+}
+
