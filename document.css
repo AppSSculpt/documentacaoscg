@@ -1,6 +1,8 @@
-
-
-/* Estilo documentação */
+* {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+/* Configuração do Body */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
@@ -41,7 +43,7 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-    color: #2d3748;
+    color: #c1d1eb;
     transform: translateY(-3px);
 }
 .container {
@@ -102,7 +104,7 @@ footer {
 
 /* Estilo para o conteúdo dos tutoriais */
 .tutorial-content {
-    background-color: white;
+    background-color: rgb(202 204 229);
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;
@@ -178,15 +180,17 @@ footer {
         padding-left: 1.2rem;
     }
 }
-
 /* Centralização de imagens */
 .img-center {
     display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 2px;
+    margin: 20px auto;
+    max-width: 70%; /* Limita a largura em 90% do container/tela */
+    max-height: 65vh; /* Limita a altura máxima a 80% da altura da tela */
+    height: auto; /* Mantém a proporção */
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
 }
+
 
 /* Ícone do menu para telas menores */
 .menu-icon {
@@ -197,9 +201,12 @@ footer {
 }
 
 .nav-links {
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+.nav-links a i {
+    margin-right: 10px;
+    font-size: 20px;
 }
 
 /* Estilos para a navegação lateral em telas menores */
@@ -218,7 +225,7 @@ footer {
 
 .nav-links a,
 .nav-links .close-btn-menu {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 15px 15;
 }
 
@@ -251,4 +258,5 @@ footer {
 
     }
 }
+
 
