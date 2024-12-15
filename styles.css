@@ -110,7 +110,7 @@ h1 {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    background-color: #4CAF50;
+    background-color: #3157ee;
     color: white;
     border: none;
     border-radius: 5px;
@@ -121,7 +121,7 @@ h1 {
 
 /* Hover no botão de ação */
 .popup-btn:hover {
-    background-color: #45a049;
+    background-color: #20368c;
     transform: translateY(-2px);
 }
 
@@ -350,7 +350,7 @@ footer .footer-content .social-icons a:hover {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    background-color: #4CAF50;
+    background-color: #3157ee;
     color: white;
     border: none;
     border-radius: 5px;
@@ -359,7 +359,7 @@ footer .footer-content .social-icons a:hover {
 }
 
 .popup .popup-content button:hover {
-    background-color: #45a049;
+    background-color: #1c37a3;
 }
 
 .popup .popup-content #fechar-popup {
