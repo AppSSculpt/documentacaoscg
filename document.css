@@ -27,7 +27,7 @@ html {
 nav {
     background-color: #0056b3;
     padding: 0.5rem 1rem;
-    text-align: center;
+    text-align: left;
     position: fixed;
     top: 0;
     width: 100%;
@@ -159,7 +159,7 @@ footer {
     nav a {
         display: block;
         font-size: 0.8rem;
-        margin: 10px 0;
+        margin: 1px 10px;
     }
     nav {
         text-align: left;
@@ -201,8 +201,8 @@ footer {
 }
 
 .nav-links {
-    justify-content: flex-start;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .nav-links a i {
     margin-right: 10px;
@@ -226,7 +226,6 @@ footer {
 .nav-links a,
 .nav-links .close-btn-menu {
     font-size: 1.2rem;
-    margin: 15px 15;
 }
 
 
@@ -256,6 +255,9 @@ footer {
     .container h1 {
         font-size: 1.5rem;
 
+    }
+    .nav-links {
+        justify-content: start;
     }
 }
 

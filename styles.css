@@ -185,7 +185,7 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 15px 10px;
     font-size: 1rem;
 }
 
@@ -387,7 +387,6 @@ footer .footer-content .social-icons a:hover {
 .nav-links {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .nav-links a i {
     margin-right: 10px;
@@ -412,7 +411,7 @@ footer .footer-content .social-icons a:hover {
 .nav-links a,
 .nav-links .close-btn {
     font-size: 1.2rem;
-    margin: 15px 0;
+    margin: 15px 10px;
 }
 
 .close-btn {

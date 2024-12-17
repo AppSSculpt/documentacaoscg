@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Incorporado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   <style>
+      /* Estilização geral */
+body {
+    font-family: Arial, sans-serif;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Garantir que o conteúdo não fique comprimido */
+    background: radial-gradient(circle, #003f88, #001e40);
+    position: relative;
+}
+
+/* Canvas como fundo */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    display: block;
+}
+
+/* Título */
+h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    margin: 10px 0;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Ajuste do título para dispositivos menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+}
+
+/* Container do formulário */
+.form-container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    background: radial-gradient(circle, #003f88, #001e40);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 40px; /* Adicionando espaçamento entre o formulário e o footer */
+}
+
+/* Estilo do iframe */
+iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    iframe {
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        height: 400px;
+    }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    width: 100%;
+    background: #001e40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Faz o footer ficar na parte inferior em telas pequenas */
+}
+
+/* Ajustes para garantir o comportamento do footer em telas menores */
+@media (max-width: 480px) {
+    footer {
+        padding: 10px 0;
+    }
+}
+
+   </style>
+   </style>
+</head>
+<body>
+    <nav>
+        <span class="menu-icon" onclick="toggleNav()">☰</span>
+        <div id="nav-links" class="nav-links">
+            <a href="documentacao.html"><i class="fas fa-file-alt"></i>Documentação</a>
+            <a href="index.html"><i class="fas fa-chalkboard-teacher"></i> Pagina inicial</a> <!-- Link para a seção de tutoriais -->
+            <button class="close-btn" onclick="toggleNav()">✕</button>
+        </div>
+    </nav>
+    <!-- Canvas de fundo -->
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="form-container">
+        <h1>Dados para inclusão</h1>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZOMfNT6wzCVMYv6yY5W9dgK4ynEYmzmF8DgxOwB458icELA/viewform?embedded=true" 
+                marginheight="0" marginwidth="0">
+            Carregando…
+        </iframe>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <img src="src/logo_appsculpt.png" alt="Logo da AppSculpt" class="logo">
+            <div class="credit">
+                Desenvolvido pela Appsculpt
+            </div>
+            <div class="social-icons">
+                <!-- Links para as redes sociais com ícones -->
+                <a href="https://instagram.com" target="_blank" class="social-icon">
+                    <img src="src/174855.png" alt="Instagram">
+                </a>
+                <a href="https://github.com" target="_blank" class="social-icon">
+                    <img src="src/779088 - Copia.png" alt="GitHub">
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        // Configuração do Canvas
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajusta o tamanho do canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Cria partículas animadas
+        const particles = [];
+        const colors = ['#66aaff', '#88ccff', '#aaccee'];
+
+        function createParticles() {
+            for (let i = 0; i < 100; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3 + 1,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedX: Math.random() * 2 - 1,
+                    speedY: Math.random() * 2 - 1,
+                });
+            }
+        }
+        createParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((particle) => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.fill();
+
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+
+                // Reposiciona partículas que saem da tela
+                if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
+                if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+}
+    </script>
+</body>
+</html>
