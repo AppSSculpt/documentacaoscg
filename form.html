@@ -64,7 +64,6 @@ h1 {
     position: relative;
     z-index: 1;
     width: 90%;
-    max-width: 800px;
     background: radial-gradient(circle, #003f88, #001e40);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
     border-radius: 10px;
@@ -113,8 +112,83 @@ footer {
         padding: 10px 0;
     }
 }
+/* Estilo da sobreposição */
+/* Estilo da sobreposição */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    display: none; /* Oculta a sobreposição por padrão */
+    z-index: 9998;
+}
 
-   </style>
+/* Estilo do botão de expandir */
+.expand-btn {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Container do formulário expandido para 100% da tela */
+.fullscreen {
+    width: 100vw; /* Largura da tela inteira */
+    height: 100vh; /* Altura da tela inteira */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle, #003f88, #001e40);
+}
+
+/* Estilo do iframe para ocupar toda a tela */
+.fullscreen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Mostrar a sobreposição quando o container estiver expandido */
+.fullscreen + .overlay {
+    display: block; /* Torna a sobreposição visível */
+}
+
+.fullscreen .expand-btn i {
+    content: '\f100'; /* Ícone de fechar */
+}
+
+.expand-btn:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+
    </style>
 </head>
 <body>
@@ -126,6 +200,7 @@ footer {
             <button class="close-btn" onclick="toggleNav()">✕</button>
         </div>
     </nav>
+    <div class="overlay" onclick="toggleExpand()"></div> <!-- Overlay para bloquear interação -->
     <!-- Canvas de fundo -->
     <canvas id="backgroundCanvas"></canvas>
     <div class="form-container">
@@ -134,6 +209,9 @@ footer {
                 marginheight="0" marginwidth="0">
             Carregando…
         </iframe>
+        <button class="expand-btn" title="Expandir" onclick="toggleExpand()">
+            <i class="fa fa-expand"></i> <!-- Ícone de expandir -->
+        </button>
     </div>
     <footer>
         <div class="footer-content">
@@ -208,6 +286,28 @@ footer {
     const navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('show');
 }
+
+function toggleExpand() {
+    const container = document.querySelector('.form-container');
+    const iframe = container.querySelector('iframe');
+    const expandBtn = container.querySelector('.expand-btn');
+    const overlay = document.querySelector('.overlay');
+
+    // Se o container não estiver expandido, expande-o
+    if (!container.classList.contains('fullscreen')) {
+        container.classList.add('fullscreen'); // Adiciona a classe de tela cheia
+        overlay.style.display = 'block';  // Exibe a sobreposição
+        expandBtn.innerHTML = '<i class="fa fa-window-close"></i>'; // Ícone de fechar
+        expandBtn.setAttribute('title', 'Fechar'); // Atualiza o texto do título
+    } else {
+        // Se estiver expandido, volta ao normal
+        container.classList.remove('fullscreen'); // Remove a classe de tela cheia
+        overlay.style.display = 'none';  // Oculta a sobreposição
+        expandBtn.innerHTML = '<i class="fa fa-expand"></i>'; // Ícone de expandir
+        expandBtn.setAttribute('title', 'Expandir'); // Atualiza o texto do título
+    }
+}
+
     </script>
 </body>
 </html>
